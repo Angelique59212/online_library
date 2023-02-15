@@ -15,10 +15,10 @@ body {
 }
 
 .home {
-  h1 {
-    text-align: vars.$text-align;
-    padding: 1rem;
-  }
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .shelf {
@@ -28,6 +28,7 @@ body {
   background-color: #d0ccc6;
 
   .name {
+    text-align: center;
     font-weight: bold;
     color: #174eaf;
     text-transform: vars.$text-transform;
@@ -38,5 +39,7 @@ body {
     padding: vars.$padding;
     text-transform: vars.$text-transform;
   }
+
+
 
 }
