@@ -11,7 +11,7 @@ html {
 body {
   font-family: "Source Code Pro", sans-serif;
   font-size: 1.3rem;
-  background-color: blanchedalmond;
+  background-color: #c0bab0;
 }
 
 .home {
@@ -25,4 +25,18 @@ body {
   width: 70vw;
   height: 30vh;
   border: 1px solid #181716;
+  background-color: #d0ccc6;
+
+  .name {
+    font-weight: bold;
+    color: #174eaf;
+    text-transform: vars.$text-transform;
+    padding: vars.$padding;
+  }
+
+  .category {
+    padding: vars.$padding;
+    text-transform: vars.$text-transform;
+  }
+
 }

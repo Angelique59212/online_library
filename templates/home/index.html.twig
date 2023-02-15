@@ -8,12 +8,12 @@
 
     {% for shelf in shelfs %}
         <div class="shelf">
-           <h2>{{ shelf.name }}</h2>
+           <h2 class="name">{{ shelf.name }}</h2>
             {% for category in shelf.category.values %}
-                <h2>{{ category.nameCategory }}</h2>
+                <h2 class="category">{{ category.nameCategory }}</h2>
                 {% for book in category.book.values %}
                     {% if book.borrower == null %}
-                        <h3>{{ book.nameBook }}</h3>
+                        <h3 class="nameBook">{{ book.nameBook }}</h3>
                     {% endif %}
                 {% endfor%}
             {% endfor %}
