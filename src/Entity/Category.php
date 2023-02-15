@@ -21,7 +21,7 @@ class Category
     #[ORM\ManyToOne(inversedBy: 'category')]
     private ?Shelf $shelf = null;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: book::class)]
+    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Book::class)]
     private Collection $book;
 
     public function __construct()
@@ -66,7 +66,7 @@ class Category
         return $this->book;
     }
 
-    public function addBook(book $book): self
+    public function addBook(Book $book): self
     {
         if (!$this->book->contains($book)) {
             $this->book->add($book);
@@ -76,7 +76,7 @@ class Category
         return $this;
     }
 
-    public function removeBook(book $book): self
+    public function removeBook(Book $book): self
     {
         if ($this->book->removeElement($book)) {
             // set the owning side to null (unless already changed)

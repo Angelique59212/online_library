@@ -1,0 +1,28 @@
+@use "./modules/vars";
+
+* {
+  @extend .reset;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 1.3rem;
+  background-color: blanchedalmond;
+}
+
+.home {
+  h1 {
+    text-align: vars.$text-align;
+    padding: 1rem;
+  }
+}
+
+.shelf {
+  width: 70vw;
+  height: 30vh;
+  border: 1px solid #181716;
+}

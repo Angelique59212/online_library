@@ -24,7 +24,7 @@ class Borrower
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $borrowed_book = null;
 
-    #[ORM\OneToMany(mappedBy: 'borrower', targetEntity: book::class)]
+    #[ORM\OneToMany(mappedBy: 'borrower', targetEntity: Book::class)]
     private Collection $book;
 
     public function __construct()
@@ -69,7 +69,7 @@ class Borrower
         return $this->book;
     }
 
-    public function addBook(book $book): self
+    public function addBook(Book $book): self
     {
         if (!$this->book->contains($book)) {
             $this->book->add($book);
@@ -79,7 +79,7 @@ class Borrower
         return $this;
     }
 
-    public function removeBook(book $book): self
+    public function removeBook(Book $book): self
     {
         if ($this->book->removeElement($book)) {
             // set the owning side to null (unless already changed)

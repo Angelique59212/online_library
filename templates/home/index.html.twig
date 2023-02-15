@@ -3,15 +3,23 @@
 {% block title %}Bibliothèque en ligne{% endblock %}
 
 {% block body %}
-<div class="container">
-    <h1>Hello! ✅</h1>
+<div class="home">
+    <h1>Accueil</h1>
 
-    <p>
-        Bibliothèque en ligne
-    </p>
+    {% for shelf in shelfs %}
+        <div class="shelf">
+           <h2>{{ shelf.name }}</h2>
+            {% for category in shelf.category.values %}
+                <h2>{{ category.nameCategory }}</h2>
+                {% for book in category.book.values %}
+                    {% if book.borrower == null %}
+                        <h3>{{ book.nameBook }}</h3>
+                    {% endif %}
+                {% endfor%}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
 </div>
-<div>
-    <a href="{{ path('app_home') }}">Accueil</a>
-    <a href="{{ path('app_category') }}">Categories</a>
-</div>
+
 {% endblock %}
