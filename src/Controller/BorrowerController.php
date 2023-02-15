@@ -54,6 +54,7 @@ class BorrowerController extends AbstractController
     /**
      * @param Borrower $borrower
      * @param Book $book
+     * @param ShelfRepository $repository
      * @return Response
      */
     #[Route('/borrow/{borrower}/{id}')]
