@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Shelf;
+use App\Repository\ShelfRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,7 +28,7 @@ class CategoryController extends AbstractController
     }
 
     #[Route('/addCategory/{name_category}/{id}')]
-    public function addCategory(string $name_category, Shelf $shelf): Response
+    public function addCategory(string $name_category, Shelf $shelf, ShelfRepository $repository): Response
     {
         $category = new Category();
         $category
@@ -37,7 +38,9 @@ class CategoryController extends AbstractController
         $this->manager->persist($category);
         $this->manager->flush();
 
-        return $this->render('home/index.html.twig');
+        return $this->render('home/index.html.twig', [
+            'shelfs' => $repository->findAll(),
+        ]);
 
     }
 }

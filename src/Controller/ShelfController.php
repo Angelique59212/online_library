@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Shelf;
+use App\Repository\ShelfRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +26,7 @@ class ShelfController extends AbstractController
     }
 
     #[Route('/addShelf/{name}')]
-    public function addShelf(string $name): Response
+    public function addShelf(string $name, ShelfRepository $repository): Response
     {
         $shelf = new Shelf();
         $shelf
@@ -34,6 +35,8 @@ class ShelfController extends AbstractController
         $this->manager->persist($shelf);
         $this->manager->flush();
 
-        return $this->render('home/index.html.twig');
+        return $this->render('home/index.html.twig', [
+            'shelfs' => $repository->findAll(),
+            ]);
     }
 }
