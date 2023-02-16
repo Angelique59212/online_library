@@ -14,7 +14,7 @@
                     {% if book.borrower == null %}
                         <div class="book_name">
                             <h3 class="nameBook">{{ book.nameBook }}</h3>
-                            <a href="/delete/{{ book.id }}"><button>Supprimer</button></a>
+                            <a href="/delete/{{ book.id }}"><button id="delete">Supprimer</button></a>
                         </div>
                     {% endif %}
                 {% endfor%}
