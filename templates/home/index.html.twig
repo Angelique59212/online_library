@@ -11,7 +11,10 @@
                 <h2 class="category">{{ category.nameCategory }}</h2>
                 {% for book in category.book.values %}
                     {% if book.borrower == null %}
-                        <h3 class="nameBook">{{ book.nameBook }}</h3>
+                        <div class="book_name">
+                            <h3 class="nameBook">{{ book.nameBook }}</h3>
+
+                        </div>
                     {% endif %}
                 {% endfor%}
             {% endfor %}
@@ -21,3 +24,4 @@
 </div>
 
 {% endblock %}
+

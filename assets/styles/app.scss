@@ -11,10 +11,14 @@ html {
 body {
   font-family: "Source Code Pro", sans-serif;
   font-size: 1.3rem;
-  background-color: #c0bab0;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,202,154,1) 35%, rgba(224,212,212,1) 100%);
 }
 
 .home {
+  background-image: url("../img/etagere.png");
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -24,13 +28,11 @@ body {
 .shelf {
   width: 70vw;
   height: 30vh;
-  border: 1px solid #181716;
-  background-color: #d0ccc6;
 
   .name {
-    text-align: center;
     font-weight: bold;
-    color: #174eaf;
+    font-size: 2.5rem;
+    color: #043da1;
     text-transform: vars.$text-transform;
     padding: vars.$padding;
   }
@@ -40,6 +42,18 @@ body {
     text-transform: vars.$text-transform;
   }
 
+  .book_name {
+    display: flex;
+    justify-content: center;
+    margin-top: -10rem;
+    margin-right: 44rem;
+    text-transform: capitalize;
 
-
+    .nameBook {
+      width: 5vw;
+      font-size: 2rem;
+      text-align: center;
+      box-shadow: 3px 3px #eed6d6, -1em 0 .4em olive;
+    }
+  }
 }
