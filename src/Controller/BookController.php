@@ -43,4 +43,14 @@ class BookController extends AbstractController
         ]);
 
     }
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function deleteBook(Book $book, EntityManagerInterface $em,ShelfRepository $repository): Response
+    {
+        $em->remove($book);
+        $em->flush();
+        return $this->render('home/index.html.twig', [
+            'shelfs' => $repository->findAll(),
+        ]);
+    }
 }
