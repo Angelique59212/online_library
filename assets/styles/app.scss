@@ -15,6 +15,14 @@ body {
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,202,154,1) 35%, rgba(224,212,212,1) 100%);
 }
 
+#advertisement {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Timmana, sans-serif;
+    text-align: center;
+    padding: 0.5rem;
+}
+
 .home {
   background-image: url("../img/etagere.png");
   background-repeat: no-repeat;
@@ -45,12 +53,13 @@ body {
   .book_name {
     display: flex;
     justify-content: center;
+    flex-direction: row;
     margin-top: -10rem;
     margin-right: 44rem;
     text-transform: capitalize;
 
     .nameBook {
-      width: 5vw;
+      width: 8vw;
       font-size: 2rem;
       text-align: center;
       box-shadow: 3px 3px #eed6d6, -1em 0 .4em olive;
